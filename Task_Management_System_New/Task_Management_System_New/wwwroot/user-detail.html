@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>User Detail</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav><h1>TaskManager</h1><a href="users.html">Back</a></nav>
+    <main>
+        <div class="card" id="userInfo"><h2>Loading...</h2></div>
+        <div class="card" style="margin-top:20px;">
+            <h3>Assigned Tasks</h3>
+            <table id="userTasks">
+                <thead><tr><th>Title</th><th>Status</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/api.js"></script>
+    <script>
+        async function loadDetail() {
+            const id = new URLSearchParams(window.location.search).get('id');
+            const res = await apiRequest(`User/${id}/tasks`);
+            const u = res.data;
+            document.getElementById('userInfo').innerHTML = `<h2>${u.userName}</h2><p>${u.email}</p>`;
+            document.getElementById('userTasks').querySelector('tbody').innerHTML = u.tasks.map(t => `
+                <tr><td>${t.title}</td><td>${t.status}</td></tr>
+            `).join('');
+        }
+        loadDetail();
+    </script>
+</body>
+</html>

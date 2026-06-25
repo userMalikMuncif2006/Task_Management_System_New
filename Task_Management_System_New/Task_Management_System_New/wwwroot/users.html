@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav><h1>TaskManager</h1><a href="dashboard.html">Dashboard</a><a href="tasks.html">Tasks</a><a href="users.html" class="active">Users</a></nav>
+    <main>
+        <div class="card">
+            <h3>Add New User</h3>
+            <input type="text" id="uName" placeholder="Name">
+            <input type="email" id="uEmail" placeholder="Email">
+            <button class="btn btn-primary" onclick="addUser()">Save User</button>
+        </div>
+        <div class="card" style="margin-top:20px;">
+            <table>
+                <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Action</th></tr></thead>
+                <tbody id="userList"></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/users.js"></script>
+</body>
+</html>

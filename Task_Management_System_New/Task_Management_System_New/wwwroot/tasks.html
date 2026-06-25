@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav><h1>TaskManager</h1><a href="dashboard.html">Dashboard</a><a href="tasks.html" class="active">Tasks</a><a href="users.html">Users</a></nav>
+    <main>
+        <div class="header-action">
+            <input type="text" id="search" placeholder="Search..." onkeyup="search()">
+            <button class="btn btn-primary" onclick="location.href='add-task.html'">+ Add Task</button>
+        </div>
+        <div class="card">
+            <table>
+                <thead><tr><th>Title</th><th>User</th><th>Status</th><th>Actions</th></tr></thead>
+                <tbody id="taskList"></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/tasks.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task | TaskManager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h1>TaskManager</h1>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="users.html">Users</a>
+    </nav>
+
+    <main>
+        <div class="header-action">
+            <h2>Edit Existing Task</h2>
+            <button class="btn btn-outline" onclick="location.href='tasks.html'">Cancel</button>
+        </div>
+
+        <div class="card">
+            <label>Task Title</label>
+            <input type="text" id="title">
+
+            <label>Description</label>
+            <textarea id="desc" rows="4"></textarea>
+
+            <label>Status</label>
+            <select id="status">
+                <option value="Todo">Todo</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+
+            <label>Assigned To</label>
+            <select id="userDropdown">
+                <!-- Loaded by JS -->
+            </select>
+
+            <div style="margin-top: 20px;">
+                <button class="btn btn-primary" onclick="saveTask()">Update Task</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/task-form.js"></script>
+</body>
+</html>

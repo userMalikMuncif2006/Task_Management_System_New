@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h1>TaskManager</h1>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="users.html">Users</a>
+    </nav>
+    <main>
+        <h2>System Overview</h2>
+        <div class="stats-grid" style="display:flex; gap:20px; margin-bottom:30px;">
+            <div class="card" style="flex:1"><h4>Total</h4><h2 id="countTotal">0</h2></div>
+            <div class="card" style="flex:1"><h4>Todo</h4><h2 id="countTodo">0</h2></div>
+            <div class="card" style="flex:1"><h4>Doing</h4><h2 id="countProgress">0</h2></div>
+            <div class="card" style="flex:1"><h4>Done</h4><h2 id="countDone">0</h2></div>
+        </div>
+        <div class="card">
+            <h3>Recent Tasks</h3>
+            <table>
+                <thead><tr><th>Title</th><th>User</th><th>Status</th></tr></thead>
+                <tbody id="recentTasks"></tbody>
+            </table>
+        </div>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

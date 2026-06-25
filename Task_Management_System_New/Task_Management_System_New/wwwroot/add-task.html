@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Task | TaskManager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <h1>TaskManager</h1>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="users.html">Users</a>
+    </nav>
+
+    <main>
+        <div class="header-action">
+            <h2>Create New Task</h2>
+            <button class="btn btn-outline" onclick="location.href='tasks.html'">Cancel</button>
+        </div>
+
+        <div class="card">
+            <label>Task Title</label>
+            <input type="text" id="title" placeholder="What needs to be done?">
+
+            <label>Description (Optional)</label>
+            <textarea id="desc" rows="4" placeholder="Add more details..."></textarea>
+
+            <label>Status</label>
+            <select id="status">
+                <option value="Todo">Todo</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+
+            <label>Assign to Team Member</label>
+            <select id="userDropdown">
+                <option value="">-- Select a User --</option>
+                <!-- Users will be loaded here by JS -->
+            </select>
+
+            <div style="margin-top: 20px;">
+                <button class="btn btn-primary" onclick="saveTask()">Create Task</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/task-form.js"></script>
+</body>
+</html>
